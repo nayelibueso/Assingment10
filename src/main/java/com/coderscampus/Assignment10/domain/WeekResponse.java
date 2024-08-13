@@ -1,5 +1,6 @@
 package com.coderscampus.Assignment10.domain;
+
 //Response objects from API
-public class DayResponse {
+public class WeekResponse {
 
 }

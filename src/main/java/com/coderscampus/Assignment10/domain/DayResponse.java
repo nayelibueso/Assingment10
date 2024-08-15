@@ -2,9 +2,14 @@ package com.coderscampus.Assignment10.domain;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class DayResponse {
 	
+	@JsonProperty("meals")
 	private List<Meal> meals;
+	
+	@JsonProperty("nutrients")
 	private Nutrients nutrients;
 	
 	public List<Meal> getMeals() {

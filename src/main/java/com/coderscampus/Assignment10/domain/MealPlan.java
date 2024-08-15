@@ -1,7 +1,8 @@
 package com.coderscampus.Assignment10.domain;
-
+//MIHGT DELETE THIS CLASS AS IT DOES NOT SEEM NECESSARY ATM
 //Represent meal plans
 public class MealPlan {
+	
 	private String timeFrame;
 	private Integer targetCalories;
 	private String diet;

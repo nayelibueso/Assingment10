@@ -1,11 +1,26 @@
 package com.coderscampus.Assignment10.domain;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 //A list of 'Meal' objects, each representing an individual meal in the plan.
 public class Meal {
+	
+	@JsonProperty("id")
 	private Integer id;
+	
+	@JsonProperty("title")
 	private String title;
+	
+	@JsonProperty("imageType")
 	private String imageType;
+	
+	@JsonProperty("readyInMinutes")
 	private Integer readyInMinutes;
+	
+	@JsonProperty("servings")
 	private Integer servings;
+	
+	@JsonProperty("sourceUrl")
 	private String sourceUrl;
 	
 	public Integer getId() {

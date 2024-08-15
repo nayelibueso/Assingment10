@@ -1,9 +1,20 @@
 package com.coderscampus.Assignment10.domain;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 //An object of 'Nutrients' class, holds the summary of the nutritional information. 
 public class Nutrients {
+	
+	@JsonProperty("calories")
 	private Double calories;
+	
+	@JsonProperty("carbohydrates")
 	private Double carbohydrates;
+	
+	@JsonProperty("fat")
 	private Double fat;
+	
+	@JsonProperty("protein")
 	private Double protein;
 	
 	public Double getCalories() {

@@ -2,10 +2,11 @@ package com.coderscampus.Assignment10.domain;
 
 //Represent meal plans
 public class MealPlan {
-	String timeFrame;
-	Integer targetCalories;
-	String diet;
-	String exclude;
+	private String timeFrame;
+	private Integer targetCalories;
+	private String diet;
+	private String exclude;
+	
 	public String getTimeFrame() {
 		return timeFrame;
 	}

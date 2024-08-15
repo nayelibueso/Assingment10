@@ -1,6 +1,24 @@
 package com.coderscampus.Assignment10.domain;
 
-//Response objects from API
-public class WeekResponse {
+import java.util.List;
 
+public class WeekResponse {
+	
+	private List<Meal> meals;
+	private Nutrients nutrients;
+	
+	public List<Meal> getMeals() {
+		return meals;
+	}
+	public void setMeals(List<Meal> meals) {
+		this.meals = meals;
+	}
+	public Nutrients getNutrients() {
+		return nutrients;
+	}
+	public void setNutrients(Nutrients nutrients) {
+		this.nutrients = nutrients;
+	}
+	
+	
 }

@@ -15,7 +15,7 @@ public class MealPlanService {
 	private static final String API_BASE_URL = "https://api.spoonacular.com/mealplanner/generate";
 	private static final String API_KEY = "1c039f06ddb0400d9c0d5034a2e09597";
 	
-	private WeekResponse getWeekMeals (String numCalories, String diet, String exclusions ) {
+	public WeekResponse getWeekMeals (String numCalories, String diet, String exclusions ) {
 		URI uri = UriComponentsBuilder.fromHttpUrl(API_BASE_URL)
 										.queryParam("timeFrame", "week")
 										.queryParam("targetCalories", numCalories)
@@ -30,7 +30,7 @@ public class MealPlanService {
 		
 	}
 	
-	private DayResponse getDayMeals (String numCalories, String diet, String exclusions) {
+	public DayResponse getDayMeals (String numCalories, String diet, String exclusions) {
 		URI uri = UriComponentsBuilder.fromHttpUrl(API_BASE_URL)
 										.queryParam("timeFrame", "day")
 										.queryParam("targetCalories", numCalories)

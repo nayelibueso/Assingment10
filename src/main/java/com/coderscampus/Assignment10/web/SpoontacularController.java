@@ -2,6 +2,7 @@ package com.coderscampus.Assignment10.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,11 +23,13 @@ public class SpoontacularController {
 	
 	@GetMapping("mealplanner/week")
 	public ResponseEntity<WeekResponse> getWeekMeals(String numCalories, String diet, String exclusions){
-		
+		WeekResponse weekResponse = mealPlanService.getWeekMeals(numCalories, diet, exclusions);
+		return ResponseEntity.ok(weekResponse);
 	}
 
 	@GetMapping("mealplanner/day")
 	public ResponseEntity<DayResponse> getDayMeals(String numCalories, String diet, String exclusions){
-		
+		DayResponse dayResponse = mealPlanService.getDayMeals(numCalories, diet, exclusions);
+		return ResponseEntity.ok(dayResponse);
 	}
 }

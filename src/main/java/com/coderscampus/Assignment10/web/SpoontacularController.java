@@ -22,14 +22,14 @@ public class SpoontacularController {
 	}
 	
 	@GetMapping("mealplanner/week")
-	public ResponseEntity<WeekResponse> getWeekMeals(String numCalories, String diet, String exclusions){
-		WeekResponse weekResponse = mealPlanService.getWeekMeals(numCalories, diet, exclusions);
+	public ResponseEntity<WeekResponse> getWeekMeals(String tergetCalories, String diet, String exclusions){
+		WeekResponse weekResponse = mealPlanService.getWeekMeals(tergetCalories, diet, exclusions);
 		return ResponseEntity.ok(weekResponse);
 	}
 
 	@GetMapping("mealplanner/day")
-	public ResponseEntity<DayResponse> getDayMeals(String numCalories, String diet, String exclusions){
-		DayResponse dayResponse = mealPlanService.getDayMeals(numCalories, diet, exclusions);
+	public ResponseEntity<DayResponse> getDayMeals(String targetCalories, String diet, String exclusions){
+		DayResponse dayResponse = mealPlanService.getDayMeals(targetCalories, diet, exclusions);
 		return ResponseEntity.ok(dayResponse);
 	}
 }

@@ -3,7 +3,7 @@ package com.coderscampus.Assignment10.domain;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+//Used for request of a week meal
 public class WeekResponse {
 	
 	@JsonProperty("meals")

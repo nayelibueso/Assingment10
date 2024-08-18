@@ -8,7 +8,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.coderscampus.Assignment10.domain.DayResponse;
 import com.coderscampus.Assignment10.domain.WeekResponse;
-//Handle the logic for calling the Spoontacular API and process the responses.
+//Handle the logic for calling the Spoontacular API to fetch meal plans based on parameters.
 @Service
 public class MealPlanService {
 	
@@ -16,6 +16,7 @@ public class MealPlanService {
 	private static final String API_KEY = "1c039f06ddb0400d9c0d5034a2e09597";
 	
 	public WeekResponse getWeekMeals (String numCalories, String diet, String exclusions ) {
+		//Construct the URI with query params 
 		URI uri = UriComponentsBuilder.fromHttpUrl(API_BASE_URL)
 										.queryParam("timeFrame", "week")
 										.queryParam("targetCalories", numCalories)
@@ -24,6 +25,9 @@ public class MealPlanService {
 										.queryParam("apiKey", API_KEY)
 										.build()
 										.toUri();
+		//Print URI for debugging 
+	    System.out.println("Constructed URI: " + uri);
+	    //Make API request
 		RestTemplate rt = new RestTemplate();
 		WeekResponse response = rt.getForObject(uri, WeekResponse.class);
 		return response;

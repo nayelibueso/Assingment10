@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coderscampus.Assignment10.domain.DayResponse;
@@ -22,13 +23,13 @@ public class SpoontacularController {
 	}
 	
 	@GetMapping("mealplanner/week")
-	public ResponseEntity<WeekResponse> getWeekMeals(String tergetCalories, String diet, String exclusions){
-		WeekResponse weekResponse = mealPlanService.getWeekMeals(tergetCalories, diet, exclusions);
+	public ResponseEntity<WeekResponse> getWeekMeals(@RequestParam(required = false) Integer targetCalories,@RequestParam(required = false) String diet,@RequestParam(required = false) String exclusions){
+		WeekResponse weekResponse = mealPlanService.getWeekMeals(targetCalories, diet, exclusions);
 		return ResponseEntity.ok(weekResponse);
 	}
 
 	@GetMapping("mealplanner/day")
-	public ResponseEntity<DayResponse> getDayMeals(String targetCalories, String diet, String exclusions){
+	public ResponseEntity<DayResponse> getDayMeals(@RequestParam(required = false) Integer targetCalories,@RequestParam(required = false) String diet,@RequestParam(required = false) String exclusions){
 		DayResponse dayResponse = mealPlanService.getDayMeals(targetCalories, diet, exclusions);
 		return ResponseEntity.ok(dayResponse);
 	}
